@@ -1,4 +1,5 @@
-{
+with open("amber/config.json", 'w') as f:
+	f.write("""{
     "COLOR": "",
     "PREFIX": "",
     "TOKEN": "",
@@ -22,4 +23,4 @@
             "path": "plugins/help.py"
         }
     }
-}
+}""")

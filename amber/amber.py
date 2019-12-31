@@ -3,12 +3,19 @@ import json
 import logging
 import importlib
 import os
+import sys
 
 from command import Command
 
-logging.basicConfig(level=logging.INFO)
+if len(sys.argv) > 1:
+    if sys.argv[2] in ["-v", "--verbose"]:
+        logging.basicConfig(format="%(levelname)s:%(module)s:%(message)s", level=logging.DEBUG)
+else:
+    logging.basicConfig(format="%(levelname)s:%(module)s:%(message)s", level=logging.INFO)
+
 
 log = logging.getLogger(__name__)
+
 
 class Amber:
     def __init__(self):
@@ -46,10 +53,10 @@ class Amber:
         @self.client.event
         async def on_message(message):
 
-            log.info("Message received from %s: %s", message.author, message.content.strip())
-
             if message.author == self.client.user:
                 return
+
+            log.debug("Message received from %s: %s", message.author, message.content.strip())
 
             c = message.content.strip().split()
 
@@ -58,11 +65,11 @@ class Amber:
                     if c[1] in self.commands.keys():
                         if callable(getattr(self.commands[c[1]], "respond", None)):
                             await self.commands[c[1]].respond(message)
-                            log.info("Fired command '%s'", str(self.commands[c[1]]))
+                            log.debug("Fired command '%s'", str(self.commands[c[1]]))
                         else:
-                            log.info("Command '%s' is not callable", c[1])
+                            log.warning("Command '%s' is not callable", c[1])
                     else:
-                        log.info("No such command '%s'", c[1])
+                        log.warning("No such command '%s'", c[1])
 
                 else:
                     return
