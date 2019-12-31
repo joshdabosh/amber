@@ -1,0 +1,25 @@
+{
+	"TOKEN":"",
+	"PREFIX":"",
+	"COLOR":"",
+	"plugins":{
+		"hello":{
+			"path":"plugins/hello.py"
+		},
+		"help":{
+			"path":"plugins/help.py",
+			"commands":{
+				"8ball": "Fortunes and advice",
+				"about": "General information",
+				"hello": "Amber says hello",
+				"help": "Displays this message"
+			}
+		},
+		"about":{
+			"path":"plugins/about.py"
+		},
+		"8ball":{
+			"path":"plugins/eightball.py"
+		}
+	}
+}
