@@ -12,7 +12,11 @@ If you'd like to see an example of what the core of Amber is like, [invite it!](
 
 Amber requires a Discord bot account. You can find out how to make one and invite it to servers [here](https://discordpy.readthedocs.io/en/latest/discord.html). Save the token you copy from step 7, and feel free to add it to as many servers as you like.
 
-Clone / download the repository. After doing so, run the file `customize.py` and select the first option.
+Clone / download the repository.
+
+Install required dependencies with `pip install -r requirements.txt`.
+
+After doing so, run the file `customize.py` and select the first option.
 
 It will end up prompting you for:
 * A token - The token you copied from step 7 of the bot creation guide.
