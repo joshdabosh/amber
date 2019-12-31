@@ -1,5 +1,5 @@
 # Amber
-<p align="center"><img src="amber.JPG" width="100" /></p>
+<p align="left"><img src="amber.JPG" width="100" /></p>
 
 Amber is a framework for making Discord bots. It contains only a few sample plugins, but custom plugins can be easily added and sculpted to one's imagination. Plugins are functions that are called whenever a user on Discord communicates with the bot with a prefix. By default, the prefix is `/amber`. For example, the `hello` plugin greets the user when they send `/amber hello`.
 
