@@ -26,7 +26,10 @@ class Amber:
         
 
     def buildConf(self):
-        self.conf = json.loads(open("secret/config.json").read())
+        try:
+            self.conf = json.loads(open("secret/config.json").read())
+        except:
+            self.conf = json.loads(open("config.json").read())
         
 
     def buildCommands(self):
