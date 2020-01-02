@@ -26,7 +26,7 @@ class Amber:
         
 
     def buildConf(self):
-        self.conf = json.loads(open("config.json").read())
+        self.conf = json.loads(open("secret/config.json").read())
         
 
     def buildCommands(self):

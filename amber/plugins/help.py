@@ -17,5 +17,5 @@ class HelpSession:
     async def respond(self, message):
         await self.client.embed(self.usage, message.channel)
 
-def load(pearl, config):
-    return HelpSession(pearl, config)
+def load(amber, config):
+    return HelpSession(amber, config)
