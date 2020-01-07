@@ -20,7 +20,7 @@ After doing so, run the file `customize.py` and select the first option.
 
 It will end up prompting you for:
 * A token - The token you copied from step 7 of the bot creation guide.
-* A prefix - What you want the bot to respond to. Could be `/amber` for example.
+* A prefix - What you want the bot to respond to. Could be `/` or `/amber `(note the space) for example.
 * A color - What color you want the bot to be themed, in hexadecimal. For example, a color could be `FCC5B1`. Capitalization doesn't matter in this case, so it could also be `fcc5b1`
 
 After filling that out, the bot should be ready to run. Make sure to exit `customize.py` with the menu option so that it knows to save the new config.

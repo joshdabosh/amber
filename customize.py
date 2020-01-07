@@ -49,10 +49,10 @@ while 1:
 
     if act == 1:
         for i in range(2, 5):
-            config[cmds[i].upper()] = input("New " + cmds[i] + ": ").lstrip("0x").lstrip("#").strip()
+            config[cmds[i].upper()] = input("New " + cmds[i] + ": ").lstrip("0x").lstrip("#").strip() if i != 3 else input("New " + cmds[i] + ": ").lstrip("0x").lstrip("#")
 
     elif 2 <= act and act <= 4:
-        config[cmds[act].upper()] = input("New " + cmds[act] + ": ").lstrip("0x").lstrip("#").strip()
+        config[cmds[act].upper()] = input("New " + cmds[act] + ": ").lstrip("0x").lstrip("#").strip() if act != 3 else input("New " + cmds[act] + ": ").lstrip("0x").lstrip("#")
 
     elif act == 5:
         c = input("\t1. Add command\n\t2. Remove command\n:")

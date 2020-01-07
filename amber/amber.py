@@ -61,22 +61,20 @@ class Amber:
 
             log.debug("Message received from %s: %s", message.author, message.content.strip())
 
-            c = message.content.strip().split()
+            c = message.content.strip()
 
-            if len(c) >= 2:
-                if c[0] == self.conf["PREFIX"].strip():
-                    if c[1] in self.commands.keys():
-                        if callable(getattr(self.commands[c[1]], "respond", None)):
-                            await self.commands[c[1]].respond(message)
-                            log.debug("Fired command '%s'", str(self.commands[c[1]]))
-                        else:
-                            log.warning("Command '%s' is not callable", c[1])
+            if c.startswith(self.conf["PREFIX"]):
+                c = message.content.replace(self.conf["PREFIX"], "").strip().split()
+
+                if c[0] in self.commands.keys():
+                    if callable(getattr(self.commands[c[0]], "respond", None)):
+                        await self.commands[c[0]].respond(message)
+                        log.debug("Fired command '%s'", str(self.commands[c[0]]))
                     else:
-                        log.warning("No such command '%s'", c[1])
-
+                        log.warning("Command '%s' is not callable (no respond method)", c[0])
                 else:
-                    return
-
+                    log.warning("No such command '%s'", c[0])
+                    
             else:
                 return
             
